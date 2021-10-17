@@ -10,71 +10,42 @@ function valNum(num) {
     return NaN;
 }
 
-function add(a,b) {
+function calculate(a, b, operator) {
 
     // define vars and initialise with validated numbers
     let numA = valNum(a);
     let numB = valNum(b);
+    let answer;
 
-    // return object with inputs and sum
+    switch (operator) {
+        case '+':
+            answer = numA + numB;
+            break;
+        case '-':
+            answer = numA - numB;
+            break;
+        case '*':
+            answer = numA * numB;
+            break;
+        case '/':
+            answer = numA / numB;
+            break;
+        default:
+            answer = NaN;
+    }
+
     return {
         a: numA,
         b: numB,
-        operator: '+',
-        answer: numA + numB
+        operator: operator,
+        answer: answer
     };
-}
 
-function subtract(a,b) {
 
-    // define vars and initialise with validated numbers
-    let numA = valNum(a);
-    let numB = valNum(b);
-
-    // return object with inputs and sum
-    return {
-        a: numA,
-        b: numB,
-        operator: '-',
-        answer: numA - numB
-    };
-}
-
-function multiply(a,b) {
-
-    // define vars and initialise with validated numbers
-    let numA = valNum(a);
-    let numB = valNum(b);
-
-    // return object with inputs and sum
-    return {
-        a: numA,
-        b: numB,
-        operator: '*',
-        answer: numA * numB
-    };
-}
-
-function divide(a,b) {
-
-    // define vars and initialise with validated numbers
-    let numA = valNum(a);
-    let numB = valNum(b);
-
-    // return object with inputs and sum
-    return {
-        a: numA,
-        b: numB,
-        operator: '/',
-        answer: numA / numB
-    };
 }
 
 // Module exports
 // expose these functions
 module.exports = {
-    add,
-    subtract,
-    multiply,
-    divide
+    calculate
 };

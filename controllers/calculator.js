@@ -29,7 +29,7 @@ router.get('/add', (req, res) => {
     }
 
     // Send back the result as an object in JSON form
-    res.json(calculator.add(a, b));
+    res.json(calculator.calculate(a, b, '+'));
 
 });
 
@@ -48,7 +48,7 @@ router.get('/subtract', (req, res) => {
     }
 
     // Send back the result as an object in JSON form
-    res.json(calculator.subtract(a, b));
+    res.json(calculator.calculate(a, b, '-'));
 
 });
 
@@ -67,7 +67,7 @@ router.get('/multiply', (req, res) => {
     }
 
     // Send back the result as an object in JSON form
-    res.json(calculator.multiply(a, b));
+    res.json(calculator.calculate(a, b, '*'));
 
 });
 
@@ -86,7 +86,7 @@ router.get('/divide', (req, res) => {
     }
 
     // Send back the result as an object in JSON form
-    res.json(calculator.divide(a, b));
+    res.json(calculator.calculate(a, b, '/'));
 
 });
 
